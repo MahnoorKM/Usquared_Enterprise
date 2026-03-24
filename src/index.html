@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usquared Enterprise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link href="../dist/output.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="h-screen flex overflow-hidden">
+
+  <!-- Sidebar -->
+  <aside class="w-60 bg-bg-sidebar border-r border-border flex flex-col shrink-0">
+
+    <!-- Logo / Brand -->
+    <div class="px-5 py-5 border-b border-border">
+      <span class="text-base font-semibold tracking-tight text-text-primary">U² Enterprise</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex-1 py-3 px-3 flex flex-col gap-0.5">
+      <a href="#" id="nav-home" onclick="nav('home')" class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium bg-bg-active text-text-primary transition-colors duration-150">
+        <!-- Icon: Home -->
+        <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.592 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+        </svg>
+        Home
+      </a>
+      <a href="#" id="nav-twins" onclick="nav('twins')" class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-text-secondary hover:bg-bg-hover hover:text-text-primary transition-colors duration-150">
+        <!-- Icon: Users/Twins -->
+        <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+        </svg>
+        Twins
+      </a>
+      <a href="#" id="nav-groups" class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-text-secondary hover:bg-bg-hover hover:text-text-primary transition-colors duration-150">
+        <!-- Icon: Group -->
+        <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+        </svg>
+        Groups
+      </a>
+      <a href="#" id="nav-knowledgebase" class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-text-secondary hover:bg-bg-hover hover:text-text-primary transition-colors duration-150">
+        <!-- Icon: Book -->
+        <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+        </svg>
+        Org Knowledgebase
+      </a>
+      <a href="#" id="nav-structure" class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-text-secondary hover:bg-bg-hover hover:text-text-primary transition-colors duration-150">
+        <!-- Icon: Org Chart -->
+        <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
+        </svg>
+        Org Structure
+      </a>
+      <a href="#" id="nav-integrations" class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-text-secondary hover:bg-bg-hover hover:text-text-primary transition-colors duration-150">
+        <!-- Icon: Puzzle -->
+        <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 0 1-.657.643 48.421 48.421 0 0 1-4.185-.069c-.547-.044-.958-.497-.958-1.045v-1.17a1.125 1.125 0 0 1 2.25 0v.344M14.25 6.087c0 .355-.186.676-.401.959a1.647 1.647 0 0 0-.349 1.003c0 1.035 1.007 1.875 2.25 1.875s2.25-.84 2.25-1.875c0-.369-.128-.713-.349-1.003-.215-.283-.401-.604-.401-.959" />
+        </svg>
+        Integrations
+      </a>
+      <a href="#" id="nav-stock-twins" class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-text-secondary hover:bg-bg-hover hover:text-text-primary transition-colors duration-150">
+        <!-- Icon: Cube -->
+        <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+        </svg>
+        Stock Twins
+      </a>
+      <a href="#" id="nav-billing" class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-text-secondary hover:bg-bg-hover hover:text-text-primary transition-colors duration-150">
+        <!-- Icon: Credit card -->
+        <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
+        </svg>
+        Billing
+      </a>
+    </nav>
+
+    <!-- Sidebar Footer -->
+    <div class="px-5 py-4 border-t border-border">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center">
+          <span class="text-xs font-semibold text-text-inverse">U</span>
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-sm font-medium text-text-primary truncate">User</p>
+          <p class="text-xs text-text-tertiary truncate">admin@usquared.io</p>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content Area (includes drawer) -->
+  <div class="flex-1 flex min-w-0 overflow-hidden">
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col min-w-0 overflow-auto">
+
+      <!-- Top Bar -->
+      <header class="h-14 border-b border-border flex items-center justify-between px-6 shrink-0 bg-bg-content">
+        <div class="flex items-center gap-3">
+          <h1 id="topbar-title" class="text-lg font-semibold text-text-primary">Home</h1>
+          <span id="topbar-badge" class="hidden text-xs font-medium text-text-tertiary bg-bg-badge px-2 py-0.5 rounded-full">0 twins</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="relative">
+            <svg class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-text-tertiary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" />
+            </svg>
+            <input id="ask-assistant" type="text" placeholder="Ask assistant..." class="h-9 w-56 bg-bg-sidebar border border-border rounded-lg pl-9 pr-3 text-sm text-text-primary placeholder-text-tertiary outline-none focus:border-accent transition-colors duration-150" />
+          </div>
+          <button id="btn-notifications" class="w-9 h-9 border border-border text-text-secondary rounded-lg hover:bg-bg-hover transition-colors duration-150 flex items-center justify-center relative">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+            </svg>
+            <span class="absolute top-2 right-2.5 w-1.5 h-1.5 bg-accent rounded-full"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Content Area -->
+      <div id="views-container" class="flex-1 flex flex-col min-w-0 overflow-auto relative">
+        
+        <!-- Home View -->
+        <div id="view-home" class="p-6 flex flex-col gap-6 w-full animate-fade-in">
+          <!-- Stats Row -->
+          <div class="grid grid-cols-3 gap-5">
+            <!-- Stat Card 1 -->
+            <div class="border border-border rounded-xl p-5 bg-bg-content flex flex-col">
+              <p class="text-[11px] font-semibold text-text-tertiary uppercase tracking-wider mb-2">Total Employees</p>
+              <h3 class="text-3xl font-bold text-text-primary">1,492</h3>
+            </div>
+            <!-- Stat Card 2 -->
+            <div class="border border-border rounded-xl p-5 bg-bg-content flex flex-col">
+              <p class="text-[11px] font-semibold text-text-tertiary uppercase tracking-wider mb-2">Total AI Twins</p>
+              <h3 class="text-3xl font-bold text-text-primary">124</h3>
+            </div>
+            <!-- Stat Card 3 -->
+            <div class="border border-border rounded-xl p-5 bg-bg-content flex flex-col">
+              <p class="text-[11px] font-semibold text-text-tertiary uppercase tracking-wider mb-2">Active Integrations</p>
+              <h3 class="text-3xl font-bold text-text-primary">14</h3>
+            </div>
+          </div>
+
+          <!-- Charts Row -->
+          <div class="grid grid-cols-2 gap-5">
+            <!-- Chart 1: Growth -->
+            <div class="border border-border rounded-xl p-5 bg-bg-content flex flex-col">
+              <h3 class="text-sm font-semibold text-text-primary mb-4">AI Twins Growth</h3>
+              <div class="w-full h-64 relative">
+                <canvas id="growthChart"></canvas>
+              </div>
+            </div>
+            <!-- Chart 2: Departments -->
+            <div class="border border-border rounded-xl p-5 bg-bg-content flex flex-col">
+              <h3 class="text-sm font-semibold text-text-primary mb-4">Twins by Department</h3>
+              <div class="w-full h-64 relative flex items-center justify-center">
+                <canvas id="deptChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Twins View -->
+        <div id="view-twins" class="hidden p-6 flex flex-col gap-6 w-full animate-fade-in">
+
+        <!-- Top Row: Create Twin + Upload Knowledgebase -->
+        <div class="grid grid-cols-2 gap-5">
+
+          <!-- Create Twin Card -->
+          <div class="border border-border rounded-xl p-6 bg-bg-content flex flex-col">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-lg bg-bg-sidebar border border-border flex items-center justify-center">
+                <svg class="w-5 h-5 text-text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-text-primary">Create a Twin</h3>
+                <p class="text-xs text-text-tertiary">Get started with your first AI twin</p>
+              </div>
+            </div>
+            <p class="text-sm text-text-secondary mb-5 leading-relaxed">Create a digital twin to automate tasks, manage workflows, and interact with your team intelligently.</p>
+            <div class="mt-auto">
+              <button class="h-9 px-4 bg-accent text-text-inverse text-sm font-medium rounded-lg hover:bg-accent-hover transition-colors duration-150 flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+                Create Twin
+              </button>
+            </div>
+          </div>
+
+          <!-- Upload Knowledgebase Card -->
+          <div class="border border-border rounded-xl p-6 bg-bg-content flex flex-col">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-lg bg-bg-sidebar border border-border flex items-center justify-center">
+                <svg class="w-5 h-5 text-text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-text-primary">Organization Knowledgebase</h3>
+                <p class="text-xs text-text-tertiary">Upload documents &amp; resources</p>
+              </div>
+            </div>
+            <p class="text-sm text-text-secondary mb-5 leading-relaxed">Upload company documents, SOPs, and reference materials so your twins can access organizational knowledge.</p>
+            <div class="mt-auto flex items-center gap-3">
+              <button id="btn-upload-kb" class="h-9 px-4 border border-border text-text-primary text-sm font-medium rounded-lg hover:bg-bg-hover transition-colors duration-150 flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
+                </svg>
+                Upload Files
+              </button>
+              <span class="text-xs text-text-tertiary">PDF, DOCX, TXT, MD</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Integrations Section -->
+        <div class="border border-border rounded-xl p-6 bg-bg-content">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <h3 class="text-sm font-semibold text-text-primary">Integrations</h3>
+              <p class="text-xs text-text-tertiary mt-0.5">Connect your tools to supercharge your twins</p>
+            </div>
+            <button class="text-xs font-medium text-text-secondary hover:text-text-primary transition-colors duration-150">View all →</button>
+          </div>
+          <div class="grid grid-cols-5 gap-3">
+            <!-- Slack -->
+            <button id="int-slack" onclick="openConnect('slack')" class="group flex flex-col items-center gap-2.5 p-4 border border-border rounded-lg hover:bg-bg-hover transition-colors duration-150 relative">
+              <div class="status-dot hidden w-2 h-2 rounded-full absolute top-2.5 right-2.5"></div>
+              <div class="w-10 h-10 rounded-lg bg-bg-sidebar border border-border-light flex items-center justify-center group-hover:border-border transition-colors duration-150">
+                <svg class="w-5 h-5 text-text-secondary" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zm10.122 2.521a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zm-1.268 0a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zm-2.523 10.122a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zm0-1.268a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+              </div>
+              <div class="text-center">
+                <span class="text-xs font-medium text-text-primary block">Slack</span>
+                <span class="status-label text-[10px] text-text-tertiary">Connect</span>
+              </div>
+            </button>
+            <!-- Jira -->
+            <button id="int-jira" onclick="openConnect('jira')" class="group flex flex-col items-center gap-2.5 p-4 border border-border rounded-lg hover:bg-bg-hover transition-colors duration-150 relative">
+              <div class="status-dot hidden w-2 h-2 rounded-full absolute top-2.5 right-2.5"></div>
+              <div class="w-10 h-10 rounded-lg bg-bg-sidebar border border-border-light flex items-center justify-center group-hover:border-border transition-colors duration-150">
+                <svg class="w-5 h-5 text-text-secondary" viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 11.513H0a5.218 5.218 0 0 0 5.232 5.215h2.13v2.057A5.215 5.215 0 0 0 12.577 24V12.518a1.005 1.005 0 0 0-1.006-1.005zm5.723-5.756H5.736a5.215 5.215 0 0 0 5.215 5.215h2.129v2.058a5.218 5.218 0 0 0 5.215 5.214V6.758a1.001 1.001 0 0 0-1.001-1.001zM23.013 0H11.455a5.215 5.215 0 0 0 5.215 5.215h2.129v2.057A5.215 5.215 0 0 0 24.013 12.5V1.005A1.005 1.005 0 0 0 23.013 0z"/></svg>
+              </div>
+              <div class="text-center">
+                <span class="text-xs font-medium text-text-primary block">Jira</span>
+                <span class="status-label text-[10px] text-text-tertiary">Connect</span>
+              </div>
+            </button>
+            <!-- Asana -->
+            <button id="int-asana" onclick="openConnect('asana')" class="group flex flex-col items-center gap-2.5 p-4 border border-border rounded-lg hover:bg-bg-hover transition-colors duration-150 relative">
+              <div class="status-dot hidden w-2 h-2 rounded-full absolute top-2.5 right-2.5"></div>
+              <div class="w-10 h-10 rounded-lg bg-bg-sidebar border border-border-light flex items-center justify-center group-hover:border-border transition-colors duration-150">
+                <svg class="w-5 h-5 text-text-secondary" viewBox="0 0 24 24" fill="currentColor"><path d="M18.78 12.653c-2.882 0-5.22 2.337-5.22 5.218S15.898 24 18.78 24s5.22-2.338 5.22-5.22-2.338-5.127-5.22-5.127zm-13.56 0C2.338 12.653 0 14.99 0 17.871S2.338 24 5.22 24s5.22-2.338 5.22-5.22-2.338-5.127-5.22-5.127zM17.83 5.22C17.83 2.338 15.492 0 12.61 0S7.39 2.338 7.39 5.22s2.338 5.22 5.22 5.22 5.22-2.338 5.22-5.22z"/></svg>
+              </div>
+              <div class="text-center">
+                <span class="text-xs font-medium text-text-primary block">Asana</span>
+                <span class="status-label text-[10px] text-text-tertiary">Connect</span>
+              </div>
+            </button>
+            <!-- Salesforce -->
+            <button id="int-salesforce" onclick="openConnect('salesforce')" class="group flex flex-col items-center gap-2.5 p-4 border border-border rounded-lg hover:bg-bg-hover transition-colors duration-150 relative">
+              <div class="status-dot hidden w-2 h-2 rounded-full absolute top-2.5 right-2.5"></div>
+              <div class="w-10 h-10 rounded-lg bg-bg-sidebar border border-border-light flex items-center justify-center group-hover:border-border transition-colors duration-150">
+                <svg class="w-5 h-5 text-text-secondary" viewBox="0 0 24 24" fill="currentColor"><path d="M10.006 5.415a4.195 4.195 0 0 1 3.045-1.306c1.56 0 2.954.883 3.662 2.163a5.056 5.056 0 0 1 2.089-.456C21.664 5.816 24 8.152 24 11.006c0 2.855-2.336 5.19-5.198 5.19a5.09 5.09 0 0 1-1.108-.127 3.827 3.827 0 0 1-3.348 1.99 3.845 3.845 0 0 1-1.727-.416A4.578 4.578 0 0 1 8.456 20c-1.476 0-2.804-.72-3.621-1.829a4.68 4.68 0 0 1-.653.049C1.873 18.22 0 16.348 0 13.94c0-1.612.882-3.026 2.185-3.778a4.016 4.016 0 0 1-.348-1.658C1.837 5.792 4.122 3.5 6.933 3.5c1.56 0 2.967.71 3.9 1.827l-.827.088z"/></svg>
+              </div>
+              <div class="text-center">
+                <span class="text-xs font-medium text-text-primary block">Salesforce</span>
+                <span class="status-label text-[10px] text-text-tertiary">Connect</span>
+              </div>
+            </button>
+            <!-- Teams -->
+            <button id="int-teams" onclick="openConnect('teams')" class="group flex flex-col items-center gap-2.5 p-4 border border-border rounded-lg hover:bg-bg-hover transition-colors duration-150 relative">
+              <div class="status-dot hidden w-2 h-2 rounded-full absolute top-2.5 right-2.5"></div>
+              <div class="w-10 h-10 rounded-lg bg-bg-sidebar border border-border-light flex items-center justify-center group-hover:border-border transition-colors duration-150">
+                <svg class="w-5 h-5 text-text-secondary" viewBox="0 0 24 24" fill="currentColor"><path d="M20.625 5.625h-3v-1.5a1.875 1.875 0 0 1 3.75 0v1.5h-.75zm-1.125 1.5a3.375 3.375 0 0 1 3.375 3.375v3a1.125 1.125 0 0 1-1.125 1.125h-3.375v-4.125a3 3 0 0 0-.75-1.987V7.125h1.875zm-5.25-3.75a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5zM13.5 9h-9a1.5 1.5 0 0 0-1.5 1.5v6A1.5 1.5 0 0 0 4.5 18h9a1.5 1.5 0 0 0 1.5-1.5v-6A1.5 1.5 0 0 0 13.5 9zm3 1.5v6a3 3 0 0 1-3 3h-3v1.125a1.875 1.875 0 0 0 1.875 1.875h5.813a1.875 1.875 0 0 0 1.875-1.875V13.5a3 3 0 0 0-3.563-2.953V10.5zM9 6.75a2.625 2.625 0 1 1 0 5.25 2.625 2.625 0 0 1 0-5.25z"/></svg>
+              </div>
+              <div class="text-center">
+                <span class="text-xs font-medium text-text-primary block">Teams</span>
+                <span class="status-label text-[10px] text-text-tertiary">Connect</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- Right Drawer -->
+    <div id="drawer" class="shrink-0 border-l border-border bg-bg-content flex transition-all duration-300 ease-in-out" style="width: 320px;">
+
+      <!-- Drawer Toggle -->
+      <button id="drawer-toggle" onclick="toggleDrawer()" class="w-6 shrink-0 flex items-center justify-center hover:bg-bg-hover transition-colors duration-150 border-r border-border-light" title="Toggle drawer">
+        <svg id="drawer-arrow" class="w-3.5 h-3.5 text-text-tertiary transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+        </svg>
+      </button>
+
+      <!-- Drawer Content -->
+      <div id="drawer-content" class="flex-1 flex flex-col overflow-hidden min-w-0">
+
+        <!-- Chat Header -->
+        <div class="px-5 py-4 border-b border-border flex items-center justify-between shrink-0">
+          <div class="flex items-center gap-2.5">
+            <div class="w-7 h-7 rounded-full bg-accent flex items-center justify-center">
+              <svg class="w-3.5 h-3.5 text-text-inverse" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" />
+              </svg>
+            </div>
+            <div>
+              <h2 class="text-sm font-semibold text-text-primary leading-tight">Assistant</h2>
+              <div class="flex items-center gap-1.5">
+                <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+                <span class="text-[10px] text-text-tertiary">Online</span>
+              </div>
+            </div>
+          </div>
+          <button class="w-7 h-7 rounded-lg hover:bg-bg-hover flex items-center justify-center transition-colors duration-150" title="Clear chat">
+            <svg class="w-3.5 h-3.5 text-text-tertiary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Chat Messages -->
+        <div id="chat-messages" class="flex-1 overflow-y-auto p-4 flex flex-col gap-3">
+
+          <!-- Welcome / Bot Message -->
+          <div class="flex gap-2.5 items-start">
+            <div class="w-6 h-6 rounded-full bg-accent flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-text-inverse" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
+              </svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="bg-bg-sidebar rounded-lg rounded-tl-none px-3.5 py-2.5">
+                <p class="text-sm text-text-primary leading-relaxed">Hi there! 👋 I'm your U² assistant. I can help you set up twins, manage integrations, and navigate the platform.</p>
+              </div>
+              <span class="text-[10px] text-text-tertiary mt-1 block px-1">Just now</span>
+            </div>
+          </div>
+
+          <!-- Suggestion Chips -->
+          <div class="pl-8 flex flex-wrap gap-1.5">
+            <button class="text-[11px] font-medium text-text-secondary border border-border rounded-full px-3 py-1 hover:bg-bg-hover hover:text-text-primary transition-colors duration-150">How do I create a twin?</button>
+            <button class="text-[11px] font-medium text-text-secondary border border-border rounded-full px-3 py-1 hover:bg-bg-hover hover:text-text-primary transition-colors duration-150">Upload knowledgebase</button>
+            <button class="text-[11px] font-medium text-text-secondary border border-border rounded-full px-3 py-1 hover:bg-bg-hover hover:text-text-primary transition-colors duration-150">Connect Slack</button>
+          </div>
+
+        </div>
+
+        <!-- Chat Input -->
+        <div class="px-4 py-3 border-t border-border shrink-0">
+          <div class="flex items-center gap-2">
+            <input id="chat-input" type="text" placeholder="Ask anything..." class="flex-1 h-9 bg-bg-sidebar border border-border rounded-lg px-3.5 text-sm text-text-primary placeholder-text-tertiary outline-none focus:border-accent transition-colors duration-150" />
+            <button id="btn-send" class="w-9 h-9 bg-accent rounded-lg flex items-center justify-center hover:bg-accent-hover transition-colors duration-150 shrink-0">
+              <svg class="w-4 h-4 text-text-inverse" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+              </svg>
+            </button>
+          </div>
+          <p class="text-[10px] text-text-tertiary mt-1.5 text-center">U² Assistant can make mistakes. Verify important info.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONNECT MODAL -->
+  <div id="connect-modal" class="hidden fixed inset-0 z-50 items-center justify-center bg-black/40" onclick="if(event.target===this)hideModal('connect-modal')">
+    <div class="bg-bg-content rounded-xl w-[420px] border border-border overflow-hidden">
+      <!-- Step 1: Permissions -->
+      <div id="connect-step-permissions">
+        <div class="px-6 pt-6 pb-4">
+          <h3 id="connect-modal-title" class="text-base font-semibold text-text-primary mb-1"></h3>
+          <p id="connect-modal-subtitle" class="text-sm text-text-secondary mb-4"></p>
+          <ul id="connect-modal-permissions" class="space-y-2.5 mb-6"></ul>
+        </div>
+        <div class="px-6 pb-6 flex items-center gap-3">
+          <button onclick="hideModal('connect-modal')" class="h-9 px-4 border border-border text-text-secondary text-sm font-medium rounded-lg hover:bg-bg-hover transition-colors duration-150">Cancel</button>
+          <button id="connect-modal-btn" onclick="simulateOAuth()" class="h-9 px-4 bg-accent text-text-inverse text-sm font-medium rounded-lg hover:bg-accent-hover transition-colors duration-150"></button>
+        </div>
+      </div>
+      <!-- Step 2: Connecting -->
+      <div id="connect-step-auth" class="hidden px-6 py-12 text-center">
+        <div class="w-10 h-10 border-2 border-border border-t-accent rounded-full animate-spin mx-auto mb-4"></div>
+        <p class="text-sm font-medium text-text-primary">Connecting...</p>
+        <p class="text-xs text-text-tertiary mt-1">Completing authorization</p>
+      </div>
+      <!-- Step 3: Success -->
+      <div id="connect-step-success" class="hidden px-6 py-10 text-center">
+        <div class="w-12 h-12 rounded-full bg-bg-sidebar border border-border flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+        </div>
+        <p class="text-sm font-semibold text-text-primary mb-1"><span id="connect-success-name"></span> connected!</p>
+        <p class="text-xs text-text-secondary mb-5">Configure it now to start using it with your twins.</p>
+        <div class="flex items-center justify-center gap-3">
+          <button onclick="hideModal('connect-modal')" class="h-9 px-4 border border-border text-text-secondary text-sm font-medium rounded-lg hover:bg-bg-hover transition-colors duration-150">Later</button>
+          <button onclick="openConfigure()" class="h-9 px-4 bg-accent text-text-inverse text-sm font-medium rounded-lg hover:bg-accent-hover transition-colors duration-150">Configure Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONFIG PANEL MODAL -->
+  <div id="config-panel" class="hidden fixed inset-0 z-50 items-center justify-center bg-black/40" onclick="if(event.target===this)hideModal('config-panel')">
+    <div class="bg-bg-content rounded-xl w-[460px] max-h-[80vh] border border-border flex flex-col overflow-hidden">
+      <div class="px-6 py-4 border-b border-border flex items-center justify-between shrink-0">
+        <h3 id="config-panel-title" class="text-base font-semibold text-text-primary"></h3>
+        <button onclick="hideModal('config-panel')" class="w-7 h-7 rounded-lg hover:bg-bg-hover flex items-center justify-center transition-colors duration-150">
+          <svg class="w-4 h-4 text-text-tertiary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div id="config-panel-body" class="flex-1 overflow-y-auto px-6 py-5"></div>
+      <div class="px-6 py-4 border-t border-border flex items-center gap-3 shrink-0">
+        <button onclick="hideModal('config-panel')" class="h-9 px-4 border border-border text-text-secondary text-sm font-medium rounded-lg hover:bg-bg-hover transition-colors duration-150">Cancel</button>
+        <button onclick="saveConfig()" class="h-9 px-4 bg-accent text-text-inverse text-sm font-medium rounded-lg hover:bg-accent-hover transition-colors duration-150">Save Configuration</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MANAGE PANEL MODAL -->
+  <div id="manage-panel" class="hidden fixed inset-0 z-50 items-center justify-center bg-black/40" onclick="if(event.target===this)hideModal('manage-panel')">
+    <div class="bg-bg-content rounded-xl w-[460px] max-h-[80vh] border border-border flex flex-col overflow-hidden">
+      <div class="px-6 py-4 border-b border-border flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-2.5">
+          <h3 id="manage-panel-title" class="text-base font-semibold text-text-primary"></h3>
+          <div class="flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-green-500"></div><span id="manage-panel-status" class="text-xs text-green-600 font-medium"></span></div>
+        </div>
+        <button onclick="hideModal('manage-panel')" class="w-7 h-7 rounded-lg hover:bg-bg-hover flex items-center justify-center transition-colors duration-150">
+          <svg class="w-4 h-4 text-text-tertiary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="px-6 py-4 flex gap-4 border-b border-border shrink-0">
+        <div class="flex-1 bg-bg-sidebar rounded-lg px-3 py-2"><span class="text-[10px] text-text-tertiary uppercase tracking-wider block">Connected</span><span class="text-sm font-medium text-text-primary">Mar 15, 2026</span></div>
+        <div class="flex-1 bg-bg-sidebar rounded-lg px-3 py-2"><span class="text-[10px] text-text-tertiary uppercase tracking-wider block">Last Sync</span><span class="text-sm font-medium text-text-primary">2 min ago</span></div>
+        <div class="flex-1 bg-bg-sidebar rounded-lg px-3 py-2"><span class="text-[10px] text-text-tertiary uppercase tracking-wider block">Twins</span><span id="manage-panel-twins" class="text-sm font-medium text-text-primary"></span></div>
+      </div>
+      <div class="px-6 py-3 shrink-0"><h4 class="text-xs font-semibold text-text-tertiary uppercase tracking-wider">Activity Log</h4></div>
+      <div id="manage-panel-log" class="flex-1 overflow-y-auto px-6 pb-4"></div>
+      <div class="px-6 py-4 border-t border-border flex items-center gap-3 shrink-0">
+        <button onclick="hideModal('manage-panel');showConfigPanel(currentIntegration)" class="h-9 px-4 border border-border text-text-primary text-sm font-medium rounded-lg hover:bg-bg-hover transition-colors duration-150">Edit Config</button>
+        <button onclick="disconnectIntegration()" class="h-9 px-4 border border-red-200 text-red-600 text-sm font-medium rounded-lg hover:bg-red-50 transition-colors duration-150">Disconnect</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast" class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 items-center gap-2.5 bg-accent text-text-inverse px-4 py-2.5 rounded-lg transition-all duration-300 translate-y-2 opacity-0">
+    <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+    <span id="toast-msg" class="text-sm font-medium"></span>
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
