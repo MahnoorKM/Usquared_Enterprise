@@ -362,6 +362,40 @@ function initCharts() {
   }
 }
 
+// Invite Flow
+function showInviteList() {
+  const initial = document.getElementById('invite-state-initial');
+  const list = document.getElementById('invite-state-list');
+  if (initial && list) {
+    initial.classList.add('hidden');
+    initial.classList.remove('flex');
+    list.classList.remove('hidden');
+    list.classList.add('flex');
+  }
+}
+
+function openAllInvitesModal() {
+  showModal('invites-modal');
+}
+
+// Knowledgebase Flow
+function openKbModal() {
+  showModal('kb-modal');
+}
+
+function linkKnowledgebase() {
+  hideModal('kb-modal');
+  const initial = document.getElementById('kb-state-initial');
+  const active = document.getElementById('kb-state-active');
+  if (initial && active) {
+    initial.classList.add('hidden');
+    initial.classList.remove('flex');
+    active.classList.remove('hidden');
+    active.classList.add('flex');
+  }
+  showToast('Knowledgebase linked successfully');
+}
+
 // Init
 document.addEventListener('DOMContentLoaded', () => {
   Object.keys(integrations).forEach(key => updateCardState(key));
